@@ -3,6 +3,8 @@
         "stack": "cpp",
         "list": "cpp",
         "*.tcc": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "stdlib.h": "c",
+        "vector": "cpp"
     }
 }

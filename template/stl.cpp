@@ -1,8 +1,6 @@
-#include <iostream>
-#include <stack>
-#include <list>
-
+#include <bits/stdc++.h>
 using namespace std;
+vector<int> vec;
 int main(){
     stack<int> stac;
     stac.push(2);
