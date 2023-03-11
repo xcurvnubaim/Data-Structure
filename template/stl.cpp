@@ -1,11 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> vec;
+
+
+template <typename T>
+class comparator{
+    public:
+        bool operator()(T a, T b){
+            return(a>b);
+        }
+};
+
 int main(){
-    stack<int> stac;
-    stac.push(2);
-    cout << stac.top() << "\n";
-    stac.pop();
-    cout << stac.top() << "\n";
+    priority_queue<string, vector<string>, comparator<string>> mypqueue;
+    mypqueue.push("halo");
+    mypqueue.push("dunia");
+    mypqueue.push("u");
+    while(!mypqueue.empty()){
+        cout << mypqueue.top() << " ";
+        mypqueue.pop();
+    }
+    
     return 0;
 }

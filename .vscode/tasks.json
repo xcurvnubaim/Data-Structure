@@ -9,7 +9,11 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/etc/${fileBasenameNoExtension}",
+                "&&",
+                "${workspaceFolder}/etc/${fileBasenameNoExtension}",
+                "<","${workspaceFolder}/etc/inp.txt",
+                ">","${workspaceFolder}/etc/out.txt",
             ],
             "options": {
                 "cwd": "${fileDirname}"

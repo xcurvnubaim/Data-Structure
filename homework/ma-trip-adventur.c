@@ -73,7 +73,7 @@ Node *find(Bst *bst, int x){
         return NULL;
 }
 
-void solve_from_below(Node* node){
+void solve_from_bottom(Node* node){
     while(node->parent){
         long long temp = node->dleaf + node->dparent;
         node = node->parent;
@@ -82,7 +82,7 @@ void solve_from_below(Node* node){
     }
 }
 
-void solve_from_above(Node* node){
+void solve_from_top(Node* node){
     if(node){
         if(node->parent){
             long long temp;
@@ -91,8 +91,8 @@ void solve_from_above(Node* node){
                 node->dleaf = temp;
         }
 
-        solve_from_above(node->left);
-        solve_from_above(node->right);
+        solve_from_top(node->left);
+        solve_from_top(node->right);
     }
 }
 
@@ -104,7 +104,7 @@ void getleaf(Node* node){
         } else {
             //leaf node
             node->dleaf=0;
-            solve_from_below(node);
+            solve_from_bottom(node);
         }
     }
 }
@@ -124,7 +124,7 @@ int main(){
         bst_insert(&bst, p,q);
     }
     getleaf(bst.root);
-    solve_from_above(bst.root);
+    solve_from_top(bst.root);
     scanf("%d",&n);
     while(n--){
         int searchval;

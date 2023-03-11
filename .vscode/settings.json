@@ -6,5 +6,6 @@
         "variant": "cpp",
         "stdlib.h": "c",
         "vector": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
