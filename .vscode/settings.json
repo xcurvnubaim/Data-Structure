@@ -5,7 +5,24 @@
         "*.tcc": "cpp",
         "variant": "cpp",
         "stdlib.h": "c",
-        "vector": "cpp"
+        "vector": "cpp",
+        "memory_resource": "cpp",
+        "scoped_allocator": "cpp",
+        "any": "cpp",
+        "array": "cpp",
+        "coroutine": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "future": "cpp",
+        "ranges": "cpp",
+        "stacktrace": "cpp",
+        "regex": "cpp",
+        "tuple": "cpp",
+        "valarray": "cpp"
     },
     "cmake.configureOnOpen": false
 }

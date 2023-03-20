@@ -61,7 +61,7 @@ Node *_find(Node *node, int x){
 }
 
 Node *find(Bst *bst, int x){
-    Bst *temp = _find(bst->root, x);
+    Node *temp = _find(bst->root, x);
     if (temp)
         return temp;
     else

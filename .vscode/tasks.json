@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: gcc build active file",
+            "label": "C/C++: gcc build active file custom",
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
@@ -12,8 +12,10 @@
                 "${workspaceFolder}/etc/${fileBasenameNoExtension}",
                 "&&",
                 "${workspaceFolder}/etc/${fileBasenameNoExtension}",
-                "<","${workspaceFolder}/etc/inp.txt",
-                ">","${workspaceFolder}/etc/out.txt",
+                "<",
+                "${workspaceFolder}/etc/inp.txt",
+                ">",
+                "${workspaceFolder}/etc/out.txt",
             ],
             "options": {
                 "cwd": "${fileDirname}"
