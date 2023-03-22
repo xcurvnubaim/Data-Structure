@@ -22,7 +22,15 @@
         "stacktrace": "cpp",
         "regex": "cpp",
         "tuple": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "algorithm": "cpp",
+        "bitset": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "ratio": "cpp",
+        "streambuf": "cpp"
     },
     "cmake.configureOnOpen": false
 }
