@@ -132,6 +132,8 @@ int main(){
         Node *res = find(&bst,searchval);
         if(res)
             printf("%d\n",res->dleaf);
+        else
+            printf("0\n");
     }
     return 0;
 }
