@@ -1,0 +1,6 @@
+5
+room 1
+room 2
+gold 3
+gold 10
+look after 1 

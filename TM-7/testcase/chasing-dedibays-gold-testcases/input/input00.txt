@@ -1,0 +1,11 @@
+10
+room 1001
+room 1002
+room 1003
+room 1004
+gold 1000
+gold 1004
+gold 1001
+room 1010
+gold 1010 
+gold 1004

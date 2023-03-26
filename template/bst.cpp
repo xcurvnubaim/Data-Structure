@@ -209,10 +209,5 @@ int main(){
     for(auto i=res.begin(); i!=res.end(); i++){
         cout << i->nama << " " << i->id << endl;
     }
-    // he halo = {"bagas", 13};
-    // if(temp<halo){
-    //     cout << "yes";
-    // }
-    // cout << temp<halo ;
     return 0;
 }

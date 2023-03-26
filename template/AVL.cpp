@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
+    
 template<typename T>
 struct AVL{
 private:
@@ -182,8 +182,13 @@ public:
         return root == NULL;
     }
 
-    _node *find(int value) {
-        return _search(root, value);
+    bool find(int value) {
+        _node *temp = _search(root, value);
+        if (temp == NULL)
+            return false;
+        
+        if (temp->value == value) return true;
+        else return false;
     }
 
     void insert(int value) {
@@ -204,48 +209,12 @@ public:
         this->_inorder(root);
     }
 
-    int LCA (int x, int y){
-        _node* node = root;
-        while(node){
-            int temp = node->value;
-            if(x < temp && y < temp)
-                node = node->left;
-            else if(x > temp && y > temp)
-                node = node->right;
-            else
-                break;
-        }
-        return this->solve(node,x) + this->solve(node,y);
-    }
-
-    int solve(_node *node, int x){
-        int path=0;
-        while(node){
-            if(x < node->value){
-                path += node->value - node->left->value;
-                node = node->left;
-            } else if(x > node->value){
-                path += node->right->value - node->value;
-                node = node->right;
-            } else
-                return path;
-        }
-        return 0;
-    }
-
 };
 
 int main(){
-    AVL<int> mytree;
-    int q;
-    cin >> q;
-    while(q--){
-        int x;
-        cin >> x;
-        mytree.insert(x);
-    }
-    int a,b;
-    cin >> a >> b;
-    cout << mytree.LCA(a,b);
+    AVL<int> set;
+    set.insert(1);
+    set.insert(2);
+    set.insert(3);
     return 0;
 }

@@ -211,7 +211,7 @@ int main(){
         for(auto i=out.begin(); i!=out.end(); i++)
             cout << *i << " ";
     } else {
-        cout << "It's not safe\n";
+        cout << "It's not safe";
     }
     return 0;
 }

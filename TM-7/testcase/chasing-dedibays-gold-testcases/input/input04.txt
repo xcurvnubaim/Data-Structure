@@ -1,0 +1,21 @@
+20
+room 1
+room 10
+room 100 
+room 1000
+room 10000
+gold 20
+gold 100
+gold 1
+room 4032
+gold 10
+gold 4032
+room 30
+room 3201
+room 5043
+gold 5041
+gold 40
+gold 10 2
+gold 1002
+tre102 2
+finding 403
