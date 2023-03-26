@@ -29,12 +29,8 @@ int main(){
                 if(myqueue.size() < b){
                     myqueue.push({i,x,y});
                 }
-            } else if(x == proses){
-                if(!myqueue.empty())
-                    dequeue();
-                myqueue.push({i,x,y});
             } else {
-                while(x > proses && !myqueue.empty())
+                while(x >= proses && !myqueue.empty())
                     dequeue();
                 myqueue.push({i,x,y});
             }
