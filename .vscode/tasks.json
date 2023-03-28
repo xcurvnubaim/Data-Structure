@@ -10,12 +10,12 @@
                 "${file}",
                 "-o",
                 "${workspaceFolder}/etc/${fileBasenameNoExtension}",
-                // "&&",
-                // "${workspaceFolder}/etc/${fileBasenameNoExtension}",
-                // "<",
-                // "${workspaceFolder}/etc/inp.txt",
-                // ">",
-                // "${workspaceFolder}/etc/out.txt",
+                "&&",
+                "${workspaceFolder}/etc/${fileBasenameNoExtension}",
+                "<",
+                "${workspaceFolder}/etc/inp.txt",
+                ">",
+                "${workspaceFolder}/etc/out.txt",
             ],
             "options": {
                 "cwd": "${fileDirname}"
