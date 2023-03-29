@@ -1,0 +1,10 @@
+2 5
+6  
+1 2 3 4 5 6
+4 
+3 5 7 9
+tambah 10 2
+tukar 1 2
+mean 1
+tambah 4 2
+modus 2

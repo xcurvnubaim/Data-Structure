@@ -1,0 +1,7 @@
+1 4
+7
+1 1 2 2 3 4 5
+tambah 3 1   
+b_atas 4 1   
+urut 1       
+mean 1
