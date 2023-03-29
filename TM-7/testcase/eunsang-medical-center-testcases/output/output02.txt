@@ -1,0 +1,21 @@
+Treated by Senior Doctor: 2
+Kathe 9 80
+Karisa 9 9
+
+Treated by Resident: 3
+Dorita 7 39
+Tome 7 23
+Marisa 6 35
+
+Treated by Intern: 4
+Kelly 4 56
+Ora 4 24
+Elsey 2 39
+Eulalie 1 9
+
+Sent to Another Hospital: 5
+Bernardine 10 63
+Arny 6 61
+Cosme 6 44
+Egbert 4 21
+Sheridan 4 5

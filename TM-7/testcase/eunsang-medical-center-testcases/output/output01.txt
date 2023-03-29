@@ -1,0 +1,9 @@
+Treated by Senior Doctor: 0
+
+Treated by Resident: 1
+Len 5 21
+
+Treated by Intern: 1
+John 3 45
+
+Sent to Another Hospital: 0

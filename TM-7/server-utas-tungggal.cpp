@@ -8,6 +8,7 @@ typedef struct {
 unsigned long long proses=0;
 vector<long long> res;
 queue<q> myqueue;
+
 void dequeue(){
     q temp = myqueue.front();
     myqueue.pop();

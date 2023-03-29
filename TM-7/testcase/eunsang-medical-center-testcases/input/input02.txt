@@ -1,0 +1,16 @@
+1 1 1 14
+Ora 4 24
+Dorita 7 39
+Marisa 6 35
+Tome 7 23
+Elsey 2 39
+Eulalie 1 9
+Cosme 6 44
+Kelly 4 56
+Kathe 9 80
+Karisa 9 9
+Egbert 4 21
+Arny 6 61
+Bernardine 10 63
+Sheridan 4 5
+Rhys 5 71
