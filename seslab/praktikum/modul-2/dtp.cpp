@@ -16,11 +16,10 @@ struct tree{
         _node *root = NULL;
         unsigned _size = 0;
 
-        _node *_create_node(_T val, int idx_level){
+        _node *_create_node(_T val){
             _node *newNode = (_node*)malloc(sizeof(_node));
             newNode -> value = val;
             newNode -> left = newNode -> right = NULL;
-            level[idx_level].push_back(newNode);
             return newNode;
         }
         _node *_rec_insert(_T val, _node *node){
@@ -36,25 +35,23 @@ struct tree{
         }
 
         void _iterative_insert(_T val){
-            int idx_level=0;
             if(root==NULL)
-                root = _create_node(val,0);
+                root = _create_node(val);
             else{
                 _node *node= root;
                 while(node){
-                    idx_level++;
                     if(val < node->value){
                         if(node->left)
                             node = node->left;
                         else{
-                            node->left = _create_node(val, idx_level); 
+                            node->left = _create_node(val); 
                             break;
                         }
                     } else if(val > node->value)
                         if(node->right)
                             node = node->right;
                         else{
-                            node->right = _create_node(val, idx_level); 
+                            node->right = _create_node(val); 
                             break;
                         }
                     else
@@ -186,7 +183,17 @@ struct tree{
             // cout << "\n";
             return _postorder_iteration();
         }
+        void fill_level(_node* node, int idx){
+            level[idx].push_back(node);
+            if(node->left)
+                fill_level(node->left, idx+1);
+            if(node->right)
+                fill_level(node->right, idx+1);
+        }
 
+        void solve(){
+            fill_level(root,0);
+        }
 };
 
 int main(){
@@ -198,7 +205,7 @@ int main(){
         cin >> x;
         mytree.insert(x);
     }
-
+    mytree.solve();
     for(int i=2; level[i+1].size(); i++){
         for(int j=1; j<level[i].size()-1; j++){
             if(level[i][j]->left || level[i][j]->right)
