@@ -30,8 +30,11 @@
         "unordered_map": "cpp",
         "unordered_set": "cpp",
         "ratio": "cpp",
-        "streambuf": "cpp"
+        "streambuf": "cpp",
+        "compare": "cpp"
     },
     "cmake.configureOnOpen": false,
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Fira code",
+    "terminal.integrated.fontFamily": "monospace"
 }
