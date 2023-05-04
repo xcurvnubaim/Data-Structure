@@ -36,5 +36,5 @@
     "cmake.configureOnOpen": false,
     "files.autoSave": "onFocusChange",
     "editor.fontFamily": "Fira code",
-    "terminal.integrated.fontFamily": "monospace"
+    "terminal.integrated.fontFamily": "Fira code"
 }

@@ -1,11 +1,8 @@
 #include <bits/stdc++.h>
 #define fastio ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 #define endl '\n'
-#define minimum using
-#define sepaneng namespace
-#define tree std;
-
-minimum sepaneng tree
+#define pip pair<int, pair<int,int>>
+using namespace std;
 
 int n;
 struct ufds{
@@ -20,9 +17,16 @@ struct ufds{
     }
 
     int find(int x){
-        while(parent[x]!=x)
-            x = parent[x];
-        return x;
+        int root = x;
+        while(parent[root]!=root)
+            root = parent[root];
+
+        while(parent[x] != root){
+            int temp = parent[x];
+            parent[x] = root;
+            x = temp;
+        }
+        return root;
     }
 
     void Union(int x, int y){
@@ -49,22 +53,23 @@ int main(){
         for(int j=0; j<n; j++)
             cin >> adjMat[i][j];
     
+    //kruskal
+    priority_queue<pip, vector<pip>, greater<pip>> edges;
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            edges.push({adjMat[i][j], {i,j}});
+        }
+    }
     int minCost = 0, edgeCount = 0;
     while(edgeCount < n-1){
-        int MIN = INT_MAX, a, b;
-        for(int i=0; i<n; i++){
-            for(int j=i+1; j<n; j++){
-                if(set.find(i)!=set.find(j) &&
-                    adjMat[i][j] < MIN){
-                        MIN = adjMat[i][j];
-                        a = i;
-                        b = j;
-                    }
-            }
+        pip temp = edges.top(); 
+        edges.pop();
+        int a = temp.second.first, b = temp.second.second;
+        if(set.find(a) != set.find(b)){
+            set.Union(a,b);
+            edgeCount++;
+            minCost += temp.first;
         }
-        set.Union(a,b);
-        edgeCount++;
-        minCost += MIN;
     }
     cout << minCost;
     return 0;

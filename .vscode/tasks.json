@@ -5,8 +5,9 @@
             "label": "C/C++: gcc build active file custom",
             "command": "/usr/bin/g++",
             "args": [
-                "-fdiagnostics-color=always",
+                // "-fdiagnostics-color=always",
                 "-g",
+                "-O0",
                 "${file}",
                 "-o",
                 "${workspaceFolder}/etc/${fileBasenameNoExtension}",

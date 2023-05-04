@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define fastio ios_base::sync_with_stdio(false); std::cin.tie(NULL);
 #define endl '\n'
+#define pii pair<int,int>
 using namespace std;
 
 int v, e, start, target;
@@ -11,16 +12,16 @@ struct ed{
 
 vector<vector<ed>> edges;
 void sp(){
-    priority_queue<int, vector<int>, greater<int>> q;
+    priority_queue<pii, vector<pii>, greater<pii>> pq;
     dist[start] = 0;
-    q.push(start);
-    while(!q.empty()){
-        int v = q.top(); q.pop();
-        for(auto i:edges[v]){
-            int temp = dist[v] + i.d;
+    pq.push({0,start});
+    while(!pq.empty()){
+        pii v = pq.top(); pq.pop();
+        for(auto i:edges[v.second]){
+            int temp = dist[v.second] + i.d;
             if(dist[i.e] > temp){
-                q.push(i.e);
                 dist[i.e] = temp;
+                pq.push({dist[i.e],i.e});
             }
         }
     }
