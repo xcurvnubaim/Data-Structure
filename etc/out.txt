@@ -1,1 +1,22 @@
-28
+2: Mesin mengerjakan produk 3
+3: Mesin memblokir produk 3
+3: Mesin mengerjakan produk 2
+5: Mesin memblokir produk 2
+4: Mesin mengerjakan produk 1
+7: Mesin memblokir produk 1
+2: Mesin mengerjakan produk 3
+3: Mesin memblokir produk 3
+3: Mesin mengerjakan produk 2
+5: Mesin memblokir produk 2
+4: Mesin mengerjakan produk 1
+5: Mesin menyelesaikan produk 1
+2: Mesin mengerjakan produk 3
+3: Mesin memblokir produk 3
+3: Mesin mengerjakan produk 2
+4: Mesin menyelesaikan produk 2
+2: Mesin mengerjakan produk 3
+3: Mesin memblokir produk 3
+2: Mesin mengerjakan produk 3
+3: Mesin memblokir produk 3
+2: Mesin mengerjakan produk 3
+3: Mesin menyelesaikan produk 3

@@ -46,20 +46,16 @@ struct ufds{
 int main(){
     fastio
     ufds set;
-    cin >> n;
-    set.makeset(n);
-    int adjMat[n][n];
-    for(int i=0; i<n; i++)
-        for(int j=0; j<n; j++)
-            cin >> adjMat[i][j];
+    int e;
+    cin >> n >> e;
+    set.makeset(n+1);
     
     //kruskal
     vector<pip> edges;
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            edges.push_back(make_pair(adjMat[i][j], 
-                make_pair(i,j)));
-        }
+    for(int i=0; i<e; i++){
+        int a,b,c;
+        cin >> a >> b >> c;
+        edges.push_back(make_pair(c, make_pair(a,b)));
     }
     int minCost = 0, edgeCount = 0;
     sort(edges.begin(), edges.end());
@@ -69,7 +65,8 @@ int main(){
         if(set.find(a) != set.find(b)){
             set.Union(a,b);
             edgeCount++;
-            minCost += temp.first;
+            // minCost += temp.first;
+            minCost = max(minCost, temp.first);
         }
     }
     cout << minCost;

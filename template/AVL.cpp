@@ -113,56 +113,60 @@ private:
         return currNode;
     }
 
-    // _node* _remove_AVL(_node* node,int value){
-    //     if(node==NULL)
-    //         return node;
-    //     if(value > node->value)
-    //         node->right=_remove_AVL(node->right,value);
-    //     else if(value < node->value)
-    //         node->left=_remove_AVL(node->left,value);
-    //     else{
-    //         _node *temp;
-    //         if((node->left==NULL)||(node->right==NULL)){
-    //             temp=NULL;
-    //             if(node->left==NULL) temp=node->right;  
-    //             else if(node->right==NULL) temp=node->left;
+    _node* _remove_AVL(_node* node,int value){
+        if(node==NULL)
+            return node;
+        if(value > node->value)
+            node->right=_remove_AVL(node->right,value);
+        else if(value < node->value)
+            node->left=_remove_AVL(node->left,value);
+        else{
+            _node *temp;
+            if((node->left==NULL)||(node->right==NULL)){
+                temp=NULL;
+                if(node->left==NULL) temp=node->right;  
+                else if(node->right==NULL) temp=node->left;
                 
-    //             if(temp==NULL){
-    //                 temp=node;
-    //                 node=NULL;
-    //             }
-    //             else
-    //                 *node=*temp;   
+                if(temp==NULL){
+                    temp=node;
+                    node=NULL;
+                }
+                else
+                    *node=*temp;   
                 
-    //             free(temp);
-    //         }
-    //         else{
-    //             temp = _findMinNode(node->right);
-    //             node->value=temp->value;
-    //             node->right=_remove_AVL(node->right,temp->value);
-    //         }    
-    //     }
+                free(temp);
+            }
+            else{
+                temp = _findMinNode(node->right);
+                node->value=temp->value;
+                node->right=_remove_AVL(node->right,temp->value);
+            }    
+        }
 
-    //     if(node==NULL) return node;
+        if(node==NULL) return node;
         
-    //     node->height=_max(_getHeight(node->left),_getHeight(node->right))+1;
+        node->height= 1 + max(_getHeight(node->left),_getHeight(node->right)); 
 
-    //     int balanceFactor= _getBalanceFactor(node);
+        int bf = getBF(node);
         
-    //     if(balanceFactor>1 && _getBalanceFactor(node->left)>=0) 
-    //         return _leftCaseRotate(node);
-
-    //     if(balanceFactor>1 && _getBalanceFactor(node->left)<0) 
-    //         return _leftRightCaseRotate(node);
-    
-    //     if(balanceFactor<-1 && _getBalanceFactor(node->right)<=0) 
-    //         return _rightCaseRotate(node);
-
-    //     if(balanceFactor<-1 && _getBalanceFactor(node->right)>0) 
-    //         return _rightLeftCaseRotate(node);
-        
-    //     return node;
-    // }
+        // L
+        if(bf > 1 && value < node->left->value)
+            return _rightRotate(node);
+        // LR
+        if(bf > 1 && value > node->left->value){
+            node->left = _leftRotate(node->left);
+            return _rightRotate(node);
+        }
+        // R
+        if(bf < -1 && value > node->right->value)
+            return _leftRotate(node);
+        // RL
+        if(bf < -1 && value < node->right->value){
+            node->right = _rightRotate(node->right);
+            return _leftRotate(node);
+        }
+        return node;
+    }
 
     void _inorder(_node *node) {
         if (node) {
@@ -198,12 +202,12 @@ public:
         }
     }
 
-    // void remove(int value) {
-    //     if (find(value)) {
-    //         root = _remove_AVL(root, value);
-    //         size--;
-    //     }
-    // }
+    void remove(int value) {
+        if (find(value)) {
+            root = _remove_AVL(root, value);
+            size--;
+        }
+    }
 
     void inorder() {
         this->_inorder(root);

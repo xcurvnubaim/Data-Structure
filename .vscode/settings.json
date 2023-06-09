@@ -31,10 +31,13 @@
         "unordered_set": "cpp",
         "ratio": "cpp",
         "streambuf": "cpp",
-        "compare": "cpp"
+        "compare": "cpp",
+        "ostream": "cpp",
+        "cmath": "cpp"
     },
     "cmake.configureOnOpen": false,
     "files.autoSave": "onFocusChange",
     "editor.fontFamily": "Fira code",
-    "terminal.integrated.fontFamily": "Fira code"
+    "terminal.integrated.fontFamily": "Fira code",
+    "C_Cpp.errorSquiggles": "enabled"
 }

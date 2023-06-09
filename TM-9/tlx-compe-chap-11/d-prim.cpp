@@ -13,7 +13,7 @@ int primMST(){
     priority_queue<pii, vector<pii>, greater<pii>> pq;
     memset(mstSet, false, sizeof(mstSet));
 
-    pq.push({0,0});
+    pq.push(make_pair(0,0));
 
     while(!pq.empty() && count < v){
         pii x = pq.top(); pq.pop();
@@ -23,10 +23,10 @@ int primMST(){
             count++;
             for(int i=0; i<v; i++){
                 if(!mstSet[i])
-                    pq.push({adjMat[x.second][i],i});
+                    pq.push(make_pair(adjMat[x.second][i],i));
             }
         }
-    }
+    }   
 
     return minMST;
 }
